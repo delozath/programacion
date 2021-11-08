@@ -2,8 +2,7 @@
 
 void llena_arreglo_int  (int arreglo[], int len);
 void imprime_arreglo_int(int arreglo[], int len);
-
-
+float promedio          (int arreglo[], int len);
 
 void main(){
   int   entero;
@@ -15,6 +14,7 @@ void main(){
   
   llena_arreglo_int  (a_enteros,entero);
   imprime_arreglo_int(a_enteros,entero);
+  printf("El promedio del arreglo es: %f\n", promedio(a_enteros,entero));
 }
 
 
@@ -35,4 +35,12 @@ void imprime_arreglo_int(int arreglo[], int len){
     printf("%d, ",arreglo[i]);
   }
   printf("%d]\n\n",arreglo[len-1]);
+}
+
+float promedio(int arreglo[], int len){
+  float m = 0;
+  for(int i=0; i<len; i++)
+    m += arreglo[i];
+  
+  return m/len;
 }
