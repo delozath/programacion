@@ -27,12 +27,13 @@ void main(){
 
 
 void llena_arreglo_int(int arreglo[], int len){
-  int ent;
+  //int ent;
   
   for(int i=0; i<len; i++){
     printf("\nIngresa A[%d]: ",i);
-    scanf("%d",&ent);
-    arreglo[i] = ent;   
+    //scanf("%d",&ent);
+    //arreglo[i] = ent;
+    scanf("%d",&arreglo[i]);
   }
 }
 
