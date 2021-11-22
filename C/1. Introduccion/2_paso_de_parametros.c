@@ -5,8 +5,8 @@ void param_valor_2(int x);
 void param_valor_3(int x);
 
 void param_ref_1(int *x);
-void param_ref_2(int *x);
-void param_ref_3(int *x);
+void param_ref_2(int *y);
+void param_ref_3(int *z);
 
 void main(){
   int var;
@@ -33,9 +33,10 @@ void param_valor_1(int x){
   param_valor_2(x);
 }
 
-void param_valor_2(int x){
+void param_valor_2(int x){ //scope
   printf("   param_valor_2\n");
   printf("\t   $(%ld) -> %3d\n", (long int)&x, x);
+  x = 200;
   param_valor_3(x);
 }
 
@@ -52,13 +53,17 @@ void param_ref_1(int *x){
   param_ref_2(x);
 }
 
-void param_ref_2(int *x){
+void param_ref_2(int *y){
+  int *x;
+  x = y;
   printf("   param_ref_2\n");
+  printf("\t   $(%ld) -> %3d\n", (long int)y, *y);
   printf("\t   $(%ld) -> %3d\n", (long int)x, *x);
+  *x = 1024;
   param_ref_3(x);
 }
 
-void param_ref_3(int *x){
+void param_ref_3(int *z){
   printf("   param_ref_3\n");
-  printf("\t   $(%ld) -> %3d\n", (long int)x, *x);
+  printf("\t   $(%ld) -> %3d\n", (long int)z, *z);
 }

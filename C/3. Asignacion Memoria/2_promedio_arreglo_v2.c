@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void llena_arreglo_int  (int arreglo[], int len);
-void imprime_arreglo_int(int arreglo[], int len);
-float promedio          (int arreglo[], int len);
+void  llena_arreglo_int  (int arreglo[], int len);
+void  imprime_arreglo_int(int arreglo[], int len);
+float promedio           (int arreglo[], int len);
 
 void main(){
   int entero     = 0;
-  int is_number  = 1;
+  int is_number  = 1; // 000->Falso, 001, 010, 011, 100, 101, 110, 111 ->  True 
   int *a_enteros;
   
   while(is_number){

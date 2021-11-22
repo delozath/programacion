@@ -8,32 +8,32 @@ typedef struct estudiante{
   char  nombre[50]          ;
   char  status              ;
   float calificaciones[NCAL];
-} estudiante;
+} estudiante; //estudiante en lugar de scruct estudiante, 
 
-void pedir_datos(estudiante registro);
-float promedio  (float arreglo[]);
-void nota       (estudiante registro);
-
+void  pedir_datos(estudiante *registro);
+float promedio   (float arreglo[]);
+void  nota       (estudiante registro);
 
 void main() {
-  estudiante e0;
-  pedir_datos(e0);
+  estudiante e0;// struct estudiante
+  pedir_datos(&e0);
   nota(e0);
 }
 
-void pedir_datos(estudiante registro){
+void pedir_datos(estudiante *registro){
   
   printf("Matricula : ");
-  scanf("%d", &registro.matricula);
+  scanf("%d", &(registro->matricula));
   printf("Nombre : ");
-  scanf("%s", registro.nombre);
+  scanf(" %[^\n]", registro->nombre);
   printf("Estatus: ");
-  scanf(" %c", &registro.status);
+  scanf(" %c", &(registro->status));
+  getchar();
   printf("Calificaciones: \n");
   
   for(int i=0; i<NCAL; i++){
     printf("  Item[%d]: ", i);
-    scanf("%f", &registro.calificaciones[i]);
+    scanf("%f", &(registro->calificaciones[i]));
   }
 }
 

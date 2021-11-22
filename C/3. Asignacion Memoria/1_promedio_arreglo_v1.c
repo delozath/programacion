@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-void llena_arreglo_int  (int arreglo[], int len);
-void imprime_arreglo_int(int arreglo[], int len);
-float promedio          (int arreglo[], int len);
+void  llena_arreglo_int  (int arreglo[], int len);
+void  imprime_arreglo_int(int arreglo[], int len);
+float promedio           (int arreglo[], int len);
 
 void main(){
   int   entero;
   
-  printf("Ingresa el tamano del arreglo:\n");
+  printf("Ingresa el tamano del arreglo:  ");
   scanf("%d",&entero);
   
   int a_enteros[entero];
@@ -20,12 +20,13 @@ void main(){
 
 
 void llena_arreglo_int(int arreglo[], int len){
-  int ent;
+  //int ent;
   
   for(int i=0; i<len; i++){
     printf("\nIngresa A[%d]: ",i);
-    scanf("%d",&ent);
-    arreglo[i] = ent;   
+    //scanf("%d",&ent);
+    //arreglo[i] = ent;
+    scanf("%d",&arreglo[i]);  
   }
 }
 
@@ -34,7 +35,7 @@ void imprime_arreglo_int(int arreglo[], int len){
   for(int i=0; i<len-1; i++){
     printf("%d, ",arreglo[i]);
   }
-  printf("%d]\n\n",arreglo[len-1]);
+  printf("%d]\n",arreglo[len-1]);
 }
 
 float promedio(int arreglo[], int len){
